@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <main>
+                <img className="img-container" src="/migo_pic.jpeg" alt="Profile" />
+                <section className="info-section">
+                    <div className="name-title">
+                        <h2> Just a Front End Developer</h2>
+                    </div>
+                </section>
+            </main>
+        </div>
+    );
 }
 
 export default App;
