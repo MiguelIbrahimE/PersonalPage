@@ -15,32 +15,58 @@ body {
 
 .App {
   text-align: left;
-  padding: 2rem;
 }
 
 main {
   display: flex;
-  flex-wrap: wrap; /* Enables wrapping on smaller screens */
-  gap: 2rem;
+  align-items: flex-start;
+  gap: 2rem; /* Space between image and text */
+  padding: 2rem;
 }
 
+/* Image Hover and Layout */
 .img-container {
+  position: relative;
   width: 30vw;
   height: auto;
+  flex-shrink: 0;
   margin-right: 2rem;
+}
+
+/* Prevent Right Click and Save on Image */
+.no-click {
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  opacity: 0.95; /* Slight transparency */
-  mix-blend-mode: multiply; /* Blends image with background */
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  user-select: none;
 }
 
+.img-container:hover .no-click {
+  opacity: 0.8;
+}
 
-section {
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-container:hover .overlay {
+  opacity: 1; /* Text fades in on hover */
+}
+
+/* Right-Aligned Text Section */
+.info-section {
   flex: 1;
-  max-width: 600px; /* Optional max-width for content */
+  text-align: right;
 }
 
-/* Typography */
 h1, h2 {
   font-weight: 300;
   margin: 0.5rem 0;
@@ -48,8 +74,5 @@ h1, h2 {
 
 p {
   margin: 1rem 0;
-}
-
-.name-title {
-  text-align: right;
+  max-width: 600px;
 }
