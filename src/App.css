@@ -8,8 +8,8 @@
 /* App Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #e0e0e0; /* Darker matte white */
-  color: #333; /* Dark text */
+  background-color: #fff9f9;
+  color: #333;
   line-height: 1.6;
 }
 
@@ -19,9 +19,11 @@ body {
 
 main {
   display: flex;
-  align-items: flex-start;
-  gap: 2rem; /* Space between image and text */
+  justify-content: space-between;
+  align-items: center;
   padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 /* Image Hover and Layout */
@@ -31,9 +33,9 @@ main {
   height: auto;
   flex-shrink: 0;
   margin-right: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* Prevent Right Click and Save on Image */
 .no-click {
   width: 100%;
   border-radius: 10px;
@@ -58,13 +60,16 @@ main {
 }
 
 .img-container:hover .overlay {
-  opacity: 1; /* Text fades in on hover */
+  opacity: 1;
 }
 
 /* Right-Aligned Text Section */
 .info-section {
   flex: 1;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 h1, h2 {
@@ -75,4 +80,103 @@ h1, h2 {
 p {
   margin: 1rem 0;
   max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .info-section h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .info-section h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Project Card Section */
+.project-card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.project-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 80%;
+  max-width: 600px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Project Image and Overlay */
+.project-image-container {
+  position: relative;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.project-overlay h3 {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+/* Learn More Button - Dark Red Wine Style */
+.learn-more-button {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #8b0000;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #660000;
+}
+
+.learn-more-button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+/* Paper Airplane Icon Animation */
+.paper-airplane-icon {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #fff;
 }
