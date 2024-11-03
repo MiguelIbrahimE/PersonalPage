@@ -1,12 +1,29 @@
+// src/App.js
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import anime from 'animejs';
 import 'aos/dist/aos.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './App.css';
+import Prometheus from './Prometheus';
 
 function App() {
-    const [isLoading, setIsLoading] = useState(true);
+    return (
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/prometheus" element={<Prometheus />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+}
+
+function Home() {
+    const [showAirplane, setShowAirplane] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         AOS.init({
@@ -15,36 +32,38 @@ function App() {
             once: true,
             offset: 200,
         });
-
-        // Simulate a page load with a timeout (for demonstration)
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 5000); // Adjust this duration as needed
-
-        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {
-        if (isLoading) {
+        if (showAirplane) {
             anime({
                 targets: '.paper-airplane-icon',
-                translateX: ['0%', '100%'],
+                translateX: ['0%', '200%'],
+                translateY: ['100%', '-100%'],
                 easing: 'linear',
-                duration: 5000, // Should match the simulated page load duration
+                duration: 3000,
                 loop: false,
+                complete: () => {
+                    setShowAirplane(false);
+                    navigate('/prometheus'); // Navigate to the Prometheus page after animation completes
+                },
             });
         }
-    }, [isLoading]);
+    }, [showAirplane, navigate]);
+
+    const handleLearnMoreClick = () => {
+        setShowAirplane(true); // Trigger the airplane animation
+    };
 
     return (
-        <div className="App">
+        <>
             <main>
-                <div className="img-container" data-aos="fade-up">
+                <div className="img-container">
                     <img src="/migo_pic.jpeg" alt="Profile" className="no-click" />
                     <div className="overlay">Miguel Ibrahim</div>
                 </div>
 
-                <section className="info-section" data-aos="fade-up">
+                <section className="info-section">
                     <h2 className="display-4 display-md-2">Just a UX Developer</h2>
                     <p className="lead fs-5 fs-md-4">Designing Things</p>
                 </section>
@@ -53,14 +72,13 @@ function App() {
             <section className="project-card-section">
                 <div className="project-card" data-aos="fade-up">
                     <div className="project-image-container">
-                        <img src="/prometheus.png" alt="Recent Project" className="project-image" />
+                        <img src="/prometheus.png" alt="Prometheus Project" className="project-image" />
                         <div className="project-overlay">
                             <button
                                 className="learn-more-button"
-                                onClick={() => window.open('https://example.com', '_blank')}
-                                disabled={isLoading}
+                                onClick={handleLearnMoreClick}
                             >
-                                {isLoading ? (
+                                {showAirplane ? (
                                     <span className="paper-airplane-icon">
                                         <i className="fas fa-paper-plane"></i>
                                     </span>
@@ -72,7 +90,29 @@ function App() {
                     </div>
                 </div>
             </section>
-        </div>
+
+            {/* New Project Grid Section */}
+            <section className="project-grid-section">
+                <div className="project-grid">
+                    <div className="grid-item" data-aos="fade-up">
+                        <a href="/prometheus" className="grid-link">
+                            <img src={"/uuLebanon.png"} alt="Project 1" className="grid-image" />
+                            <div className="grid-overlay">
+                                <span className="grid-text">UULebanon</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="grid-item" data-aos="fade-up">
+                        <a href="https://example.com/uuLebanon" target="_blank" rel="noopener noreferrer">
+                            <img src={"/votinator.png"} alt="Project 2" className="grid-image" />
+                            <div className="grid-overlay">
+                                <span className="grid-text">Shh</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </>
     );
 }
 
