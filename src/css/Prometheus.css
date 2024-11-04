@@ -3,25 +3,24 @@
 }
 
 .navbar {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    background-color: #000000;
     color: #fff;
-    padding: 1rem;
+}
+
+.navbar-logo-container {
+    flex: 1;
 }
 
 .navbar-logo {
-    max-width: 150px;
-}
-
-.menu-toggle {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: none;
+    max-width: 110px;
 }
 
 .nav-links {
-    gap: 1rem;
+    display: flex;
+    gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -32,38 +31,26 @@
     text-decoration: none;
     font-size: 1rem;
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .nav-link:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .nav-links.nav-links-active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-link {
-        padding: 0.75rem;
-        text-align: center;
-    }
-}
-
 .content {
     padding: 2rem;
     text-align: center;
+}
+@font-face {
+    font-family: 'PrometheusFont'; /* Replace with your font's actual name if different */
+    src: url('../Prometheus/font/P.ttf') format('truetype'),
+    url('../Prometheus/font/P.ttf') format('truetype'); /* Adjust formats as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-prometheus {
+    font-family: 'PrometheusFont', Arial, sans-serif; /* Fallbacks in case the custom font doesn't load */
 }
