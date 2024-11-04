@@ -1,0 +1,69 @@
+.prometheus-page {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    color: #fff;
+    padding: 1rem;
+}
+
+.navbar-logo {
+    max-width: 150px;
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-links {
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-links.nav-links-active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-link {
+        padding: 0.75rem;
+        text-align: center;
+    }
+}
+
+.content {
+    padding: 2rem;
+    text-align: center;
+}

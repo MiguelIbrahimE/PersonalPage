@@ -5,7 +5,7 @@ import AOS from 'aos';
 import anime from 'animejs';
 import 'aos/dist/aos.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import './App.css';
+import './css/App.css';
 import Prometheus from './Prometheus';
 
 function App() {
@@ -41,7 +41,7 @@ function Home() {
                 translateX: ['0%', '200%'],
                 translateY: ['100%', '-100%'],
                 easing: 'linear',
-                duration: 3000,
+                duration: 1111,
                 loop: false,
                 complete: () => {
                     setShowAirplane(false);
