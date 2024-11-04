@@ -1,13 +1,23 @@
-.prometheus-page {
-    font-family: Arial, sans-serif;
+/* src/css/Prometheus.css */
+
+@font-face {
+    font-family: 'PrometheusFont';
+    src: url('../Prometheus/font/P.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the custom font to all text */
+.prometheus-page, .font-prometheus {
+    font-family: 'PrometheusFont', Arial, sans-serif;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    padding-right: 1rem;
-    background-color: #000000;
-    color: #fff;
+    padding: 1rem;
+    background-color: #000000; /* Black background color */
+    color: #864D25; /* Brown color for text in navbar */
 }
 
 .navbar-logo-container {
@@ -27,7 +37,7 @@
 }
 
 .nav-link {
-    color: #fff;
+    color: #864D25; /* Brown color for navbar links */
     text-decoration: none;
     font-size: 1rem;
     cursor: pointer;
@@ -42,15 +52,7 @@
 .content {
     padding: 2rem;
     text-align: center;
-}
-@font-face {
-    font-family: 'PrometheusFont'; /* Replace with your font's actual name if different */
-    src: url('../Prometheus/font/P.ttf') format('truetype'),
-    url('../Prometheus/font/P.ttf') format('truetype'); /* Adjust formats as needed */
-    font-weight: normal;
-    font-style: normal;
+    color: #000000; /* Black color for main content text */
 }
 
-.font-prometheus {
-    font-family: 'PrometheusFont', Arial, sans-serif; /* Fallbacks in case the custom font doesn't load */
-}
+
