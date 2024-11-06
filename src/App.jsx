@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
@@ -7,6 +6,7 @@ import 'aos/dist/aos.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './css/App.css';
 import Prometheus from './Prometheus';
+import prometheusImage from './assets/prometheus.png';
 
 function App() {
     return (
@@ -72,7 +72,7 @@ function Home() {
             <section className="project-card-section">
                 <div className="project-card" data-aos="fade-up">
                     <div className="project-image-container">
-                        <img src="/prometheus.png" alt="Prometheus Project" className="project-image" />
+                        <img src={prometheusImage} alt="Prometheus Project" className="project-image" />
                         <div className="project-overlay">
                             <button
                                 className="learn-more-button"
@@ -95,7 +95,7 @@ function Home() {
             <section className="project-grid-section">
                 <div className="project-grid">
                     <div className="grid-item" data-aos="fade-up">
-                        <a href="/prometheus" className="grid-link">
+                        <a href="/about/src/Prometheus" className="grid-link">
                             <img src={"/uuLebanon.png"} alt="Project 1" className="grid-image" />
                             <div className="grid-overlay">
                                 <span className="grid-text">UULebanon</span>

@@ -1,4 +1,4 @@
-// src/Prometheus.js
+// src/Prometheus.jsx
 import React from 'react';
 
 function Prometheus() {

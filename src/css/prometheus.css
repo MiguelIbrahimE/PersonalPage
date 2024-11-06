@@ -1,0 +1,91 @@
+
+.prometheus-page {
+    font-family: 'Arial, sans-serif';
+    color: black;
+}
+
+.prometheus-navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000000;
+    color: #864D25;
+}
+
+.prometheus-navbar-logo-container {
+    flex: 1;
+}
+
+.prometheus-navbar-logo {
+    max-width: 110px;
+}
+
+.prometheus-nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.prometheus-nav-link {
+    color: #864D25;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.prometheus-nav-link:hover {
+    text-decoration: underline;
+}
+
+.prometheus-content {
+    padding: 2rem;
+    text-align: center;
+    color: black;
+}
+
+.prometheus-project-grid-section {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.prometheus-project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.prometheus-grid-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prometheus-grid-image {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.prometheus-grid-text-container {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.prometheus-grid-text {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
