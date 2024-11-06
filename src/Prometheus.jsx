@@ -58,11 +58,18 @@ function Prometheus() {
                     <div className="prometheus-grid-item">
                         <img src={Apollo} alt="Project 1" className="prometheus-grid-image" />
                         <div className="prometheus-grid-text-container">
-                            <span className="prometheus-grid-text">Prometheus Tech is a mission</span>
-                            <br />
-                            <span className="prometheus-grid-text">A mission to design</span>
-                            <br />
-                            <span className="prometheus-grid-text">A mission to simplify</span>
+                            <span className="prometheus-grid-text">Apollo, the God of Arts</span>
+                            <br/>
+                            <span className="prometheus-grid-text">Apollo is a mission to help startups</span>
+                            <br/>
+                            <br/>
+                            <span className="prometheus-grid-text">A mission to provide easy code snippets based on their desires.</span>
+                            <br/>
+                            <br/>
+                            <span className="prometheus-grid-text">You provide it with whatever you want, it provides you with the code, and a preview.</span>
+                            <br/><br/>
+                            <span className="prometheus-grid-text">As simple as that.</span>
+
                         </div>
                     </div>
                 </div>

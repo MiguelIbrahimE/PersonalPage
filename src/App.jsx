@@ -41,7 +41,7 @@ function Home() {
                 translateX: ['0%', '200%'],
                 translateY: ['100%', '-100%'],
                 easing: 'linear',
-                duration: 1111,
+                duration: 1000,
                 loop: false,
                 complete: () => {
                     setShowAirplane(false);
